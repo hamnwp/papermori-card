@@ -1,0 +1,198 @@
+/* 1. นำเข้าฟอนต์จาก Google (กันเหนียวถ้าใน index.html ไม่ติด) */
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Handjet:wght@100..900&display=swap");
+
+/* 2. กำหนด Font พื้นฐานให้ทั้งเว็บ */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff6f2;
+  /* เพิ่มบรรทัดนี้ลงไปเพื่อให้ทุกอย่างเป็น Handjet ไว้ก่อน */
+  font-family: "Handjet", sans-serif;
+}
+
+.homepage .webname {
+  font-size: 55px;
+  margin-top: 85px;
+  margin-bottom: 62px;
+  text-align: center;
+}
+
+.homepage .webname.fade-out {
+  opacity: 0;
+}
+
+.homepage .webname,
+.homepage .text-home {
+  transition: all 0.8s ease;
+}
+
+.homepage .text-home.fade-out {
+  opacity: 0;
+}
+
+
+/* ===== SelectPage style ===== */
+.selectpage .webname {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 260px;
+
+  /* เริ่มต้น */
+  transform: translateY(-120px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ตอน animation ทำงาน */
+.selectpage .webname.drop {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.text-home {
+  font-family: "Handjet", sans-serif !important;
+  font-size: 25px;
+  margin-top: 30px;
+  
+}
+
+.homepage .webname,
+.homepage .text-home {
+  transition: all 0.8s ease;
+}
+
+.homepage .fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.text-select-paper {
+  font-family: "Handjet", sans-serif !important;
+  font-size: 25px;
+}
+
+.container {
+  text-align: center;
+}
+
+.paper {
+  width: 324px;
+  height: 392px;
+  position: relative;
+}
+
+/* ===== TOP FLAP ===== */
+.paper-top {
+  position: absolute;
+  width: 324px;
+  height: 270.34px;
+  background: #7fb0e8;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  top: 0;
+  left: 0;
+
+  transform-origin: top;
+  transform: rotateX(0deg);
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
+
+/* ===== BOTTOM FLAP ===== */
+.paper-bottom {
+  position: absolute;
+  width: 324px;
+  height: 175.72px;
+  background: #7fb0e8;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  bottom: 0;
+  left: 0;
+
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* ===== MIDDLE PAPER ===== */
+.paper-middle {
+  position: absolute;
+  width: 324px;
+  height: 392px;
+  background: #f0dd7b;
+  top: 0;
+  left: 0;
+}
+
+/* ===== OPEN STATE ===== */
+
+.paper.open .paper-top {
+  transform: rotateX(150deg);
+}
+
+.paper.open .paper-bottom {
+  transform: rotateX(-150deg);
+}
+
+.paper.open .paper-middle {
+  transform: rotateY(0deg);
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.color-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    transform 0.2s,
+    border 0.2s;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+.color-box:hover {
+  transform: translateY(-2px);
+}
+
+.color-box.active {
+  border: 2px solid black;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.selectpage {
+  position: relative;
+}
+
+/* ครอบ text + menu ทั้งหมด */
+.select-ui {
+  position: absolute;
+  top: 80px; /* ปรับตำแหน่งให้ทับ paper-top */
+  left: 50%;
+  transform: translateX(-50%) translateY(-40px);
+
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 5; /* ให้อยู่เหนือ paper-top */
+  text-align: center;
+}
+
+/* ตอนแสดง */
+.select-ui.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

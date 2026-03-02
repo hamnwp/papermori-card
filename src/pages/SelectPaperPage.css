@@ -1,0 +1,9 @@
+.webname {
+  font-family: 'Homemade Apple', cursive;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.text-select-paper {
+  font-family: 'Handjet', sans-serif;
+}
