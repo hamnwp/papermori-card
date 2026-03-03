@@ -23,18 +23,14 @@ export default function HomePage({ goNext }: Props) {
 
   return (
     <div className="container homepage">
-      <h1 className={`webname ${isFading ? "fade-out" : ""}`}>Papermori</h1>
+      
+      <h1 className={`papermori ${isFading ? "fade-out" : ""}`}>Papermori</h1>
+      <p className={`footerCredit ${isFading ? "fade-out" : ""}`}>made by @hamnwp</p>
 
-      <p className={`text-home ${isFading ? "fade-out" : ""}`}>
+      <p className={`webTagline ${isFading ? "fade-out" : ""}`}>
         tiny envelopes holding endless feelings
       </p>
 
-      {/* กระดาษแสดงเฉย ๆ ไม่ต้องมี open state */}
-      <div className="paper">
-        <div className="paper-top" />
-        <div className="paper-middle" />
-        <div className="paper-bottom" />
-      </div>
 
       {/* ปุ่มสติกเกอร์ กดแล้วไปหน้า Select เลย */}
       <button
@@ -44,7 +40,7 @@ export default function HomePage({ goNext }: Props) {
         <img src={sticker} alt="Choose your paper" />
       </button>
 
-      <p className="text-footer">made by @hamnwp</p>
+      
     </div>
   );
 }

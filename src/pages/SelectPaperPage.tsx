@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./SelectPaperPage.css";
 
 type PaperTheme = {
   id: string;
@@ -21,80 +22,41 @@ const themes: PaperTheme[] = [
   { id: "5", topBottomColor: "#D6D35E", centerColor: "#f3f057E6F0ff" },
   { id: "6", topBottomColor: "#C46040", centerColor: "#F9BEC4" },
 ];
-
 export default function SelectPaperPage({
   paper,
   setPaper,
   goNext,
   goHome,
 }: Props) {
-  const [isOpening, setIsOpening] = useState(false);
   const [showUI, setShowUI] = useState(false);
 
   useEffect(() => {
-    // 1️⃣ เปิดกระดาษ
-    const openTimer = setTimeout(() => {
-      setIsOpening(true);
-    }, 300);
-
-    // 2️⃣ หลังจาก animation กางเสร็จ (~0.8s)
     const uiTimer = setTimeout(() => {
       setShowUI(true);
-    }, 1200);
-
-    return () => {
-      clearTimeout(openTimer);
-      clearTimeout(uiTimer);
-    };
+    }, 500);
+    return () => clearTimeout(uiTimer);
   }, []);
 
   return (
     <div className="container selectpage">
-      <h1
-  className={`webname ${isOpening ? "drop" : ""}`}
-  onClick={goHome}
->
+      <h1 className="brandName" onClick={goHome}>
         Papermori
       </h1>
 
-      {/* Paper */}
-      <div className={`paper ${isOpening ? "open" : ""}`}>
-  <div
-    className="paper-top"
-    style={{ background: paper.topBottomColor }}
-  />
-
-  <div
-    className="paper-middle"
-    style={{ background: paper.centerColor }}
-  />
-
-  <div
-    className="paper-bottom"
-    style={{ background: paper.topBottomColor }}
-  />
-</div>
-
-
-      {/* Text + UI (เลื่อนลงมาทับ flap บน) */}
       <div className={`select-ui ${showUI ? "show" : ""}`}>
-        <h2 className="text-select-paper">choose your paper</h2>
-
+        <h2 className="selectionPrompt">choose your paper</h2>
         <div className="color-grid">
           {themes.map((theme) => (
             <div
               key={theme.id}
-              className={`color-box ${
-                paper.id === theme.id ? "active" : ""
-              }`}
+              className={`color-box ${paper.id === theme.id ? "active" : ""}`}
               style={{ background: theme.topBottomColor }}
               onClick={() => setPaper(theme)}
             />
           ))}
         </div>
-
         <button className="next-btn" onClick={goNext}>
-          Next
+          next
         </button>
       </div>
     </div>

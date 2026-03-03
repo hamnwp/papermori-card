@@ -1,38 +1,60 @@
-.webname {
-  font-family: 'Homemade Apple', cursive;
-
+.papermori {
+  font-family: "Homemade Apple", cursive;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-  
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+  font-size: 55px;
+  margin-top: 55px;
+  text-align: center;
 }
 
-.text-home {
-  font-family: 'Handjet', sans-serif;
+.webTagline {
+  font-family: "Handjet", sans-serif;
+  font-size: 25px;
+  margin-top: 80px;
 }
 
-.text-footer {
-  font-family: 'Handjet', sans-serif;
+.footerCredit {
+  font-family: "Handjet", sans-serif;
+  margin-top: -60px;
+}
 
+.papermori.fade-out {
+  opacity: 0;
+}
+
+.webTagline.fade-out {
+  opacity: 0;
+}
+
+.footerCredit.fade-out {
+  opacity: 0;
+}
+
+.papermori,
+.webTagline,
+.footerCredit {
+  transition: all 0.8s ease;
 }
 
 .sticker-btn {
   position: absolute;
-  top: 470px;       /* ปรับตำแหน่งได้ */
+  top: 470px;
   left: 50%;
   transform: translateX(-50%) rotate(-8deg); /* เอียงนิดนึงให้ดูเหมือนแปะ */
-  
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-
-  z-index: 10;     /* สำคัญ! ต้องมากกว่า paper-top */
+  z-index: 10;
 }
-
 
 .sticker-btn img {
   width: 240px;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
   transform-origin: top left;
 }
 

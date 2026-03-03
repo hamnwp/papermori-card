@@ -1,9 +1,92 @@
-.webname {
-  font-family: 'Homemade Apple', cursive;
+.brandName {
+  font-family: "Homemade Apple", cursive;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
-.text-select-paper {
-  font-family: 'Handjet', sans-serif;
+.selectionPrompt {
+  font-family: "Handjet", sans-serif;
+  font-size: 25px;
+}
+
+.next-btn {
+  font-size: 25px;
+  background: transparent !important; /* พื้นหลังใส */
+  border: none !important; /* ลบเส้นขอบ */
+  box-shadow: none !important; /* ลบเงากล่อง */
+  outline: none !important;
+  padding: 0;
+
+  color: #555;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* เมาส์จ่อ */
+  transition: all 0.2s ease;
+
+  margin-top: 450px;
+}
+
+.next-btn:hover {
+  color: #000;
+  transform: scale(1.1); /* ให้ตัวหนังสือโตขึ้นเวลาจะกด */
+}
+
+.container {
+  text-align: center;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.color-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    transform 0.2s,
+    border 0.2s;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+.color-box:hover {
+  transform: translateY(-2px);
+}
+
+.color-box.active {
+  border: 2px solid black;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.selectpage {
+  position: relative;
+}
+
+.select-ui {
+  position: absolute;
+  top: 80px; /* ปรับตำแหน่งให้ทับ paper-top */
+  left: 50%;
+  transform: translateX(-50%) translateY(-40px);
+
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 5; /* ให้อยู่เหนือ paper-top */
+  text-align: center;
+}
+
+.select-ui.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

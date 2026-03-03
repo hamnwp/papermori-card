@@ -1,0 +1,127 @@
+.brandName {
+  font-family: "Homemade Apple", cursive;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.selectionPrompt {
+  font-family: "Handjet", sans-serif;
+  font-size: 25px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  margin-top: 230px;
+}
+
+.nextms-btn {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline-block;
+  font-size: 25px;
+  background: transparent !important; /* พื้นหลังใส */
+  border: none !important; /* ลบเส้นขอบ */
+  box-shadow: none !important; /* ลบเงากล่อง */
+  outline: none !important;
+  padding: 0;
+
+  color: #555;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* เมาส์จ่อ */
+  transition: all 0.2s ease;
+}
+
+.backms-btn {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline-block;
+  font-size: 25px;
+  background: transparent !important; /* พื้นหลังใส */
+  border: none !important; /* ลบเส้นขอบ */
+  box-shadow: none !important; /* ลบเงากล่อง */
+  outline: none !important;
+  padding: 0;
+
+  color: #555;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* เมาส์จ่อ */
+  transition: all 0.2s ease;
+}
+
+.nextms-btn:hover {
+  color: #000;
+  transform: scale(1.1); /* ให้ตัวหนังสือโตขึ้นนิดนึงเวลาจะกด */
+}
+
+.backms-btn:hover {
+  color: #000;
+  transform: scale(1.1); /* ให้ตัวหนังสือโตขึ้นเวลาจะกด */
+}
+
+.container {
+  text-align: center;
+}
+
+.writepage {
+  position: relative;
+}
+
+.write-ui {
+  position: absolute;
+  top: 80px; /* ปรับตำแหน่งให้ทับ paper-top */
+  left: 50%;
+  transform: translateX(-50%) translateY(-40px);
+
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 5; /* ให้อยู่เหนือ paper-top */
+  text-align: center;
+}
+
+.write-ui.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.input-container {
+  width: 280px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 200px;
+}
+
+.feeling-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-align: center;
+  color: #555;
+  padding: 10px;
+}
+
+.feeling-input::placeholder {
+  color: #9b9a9a;
+  font-style: italic;
+}
