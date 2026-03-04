@@ -6,6 +6,7 @@ type Props = {
   setMessage: (msg: string) => void;
   goNext: () => void;
   goBack: () => void;
+  goHome: () => void;
 };
 
 export default function WriteMessagePage({
@@ -13,11 +14,14 @@ export default function WriteMessagePage({
   setMessage,
   goNext,
   goBack,
+  goHome,
 }: Props) {
   const [showUI, setShowUI] = useState(false);
 
+  const [toWhom, setToWhom] = useState("");
+  const [fromWhom, setFromWhom] = useState("");
+
   useEffect(() => {
-    // ให้ UI ค่อย ๆ โผล่มาหลังจากเปลี่ยนหน้า
     const uiTimer = setTimeout(() => {
       setShowUI(true);
     }, 500);
@@ -26,21 +30,46 @@ export default function WriteMessagePage({
 
   return (
     <div className="container writepage">
-      <h1 className="brandName" onClick={goBack}>
+      <h1 className="brandName" onClick={goHome}>
         Papermori
       </h1>
 
       <div className={`write-ui ${showUI ? "show" : ""}`}>
-        <h2 className="selectionPrompt">write your feelings</h2>
+        <div className="letter-body">
+          {/* Dear... */}
+          <div className="input-section">
+            <span className="label-text">Dear </span>
+            <input
+              className="name-input"
+              value={toWhom}
+              onChange={(e) => setToWhom(e.target.value)}
+              placeholder="Lovely One"
+              maxLength={25}
+            />
+          </div>
 
-        <div className="input-container">
-          <textarea
-            className="feeling-input"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="type here..."
-            maxLength={300}
-          />
+          {/* ข้อความหลัก */}
+          <div className="input-container">
+            <textarea
+              className="feeling-input"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="There are moments I wish I could press pause, just to tell you how much you mean to me..."
+              maxLength={300}
+            />
+          </div>
+
+          {/* Sincerely... */}
+          <div className="signature-section">
+            <div className="sincerely-text">Sincerely,</div>
+            <input
+              className="from-input"
+              value={fromWhom}
+              onChange={(e) => setFromWhom(e.target.value)}
+              placeholder="Always yours"
+              maxLength={25}
+            />
+          </div>
         </div>
 
         <div className="button-group">

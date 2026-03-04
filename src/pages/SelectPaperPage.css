@@ -4,6 +4,9 @@
   transition:
     transform 0.2s,
     opacity 0.2s;
+  font-size: 25px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .selectionPrompt {
@@ -45,7 +48,7 @@
   grid-template-columns: repeat(3, 60px);
   gap: 12px;
   justify-content: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .color-box {
@@ -76,13 +79,13 @@
 
 .select-ui {
   position: absolute;
-  top: 80px; /* ปรับตำแหน่งให้ทับ paper-top */
+  top: 80px; 
   left: 50%;
   transform: translateX(-50%) translateY(-40px);
 
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-  z-index: 5; /* ให้อยู่เหนือ paper-top */
+  z-index: 5; 
   text-align: center;
 }
 

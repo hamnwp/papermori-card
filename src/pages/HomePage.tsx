@@ -15,7 +15,6 @@ export default function HomePage({ goNext }: Props) {
     setIsPeeling(true);
     setIsFading(true);
 
-    // รอ animation 0.8 วิ ก่อนเปลี่ยนหน้า
     setTimeout(() => {
       goNext();
     }, 800);
@@ -23,24 +22,21 @@ export default function HomePage({ goNext }: Props) {
 
   return (
     <div className="container homepage">
-      
       <h1 className={`papermori ${isFading ? "fade-out" : ""}`}>Papermori</h1>
-      <p className={`footerCredit ${isFading ? "fade-out" : ""}`}>made by @hamnwp</p>
+      <p className={`footerCredit ${isFading ? "fade-out" : ""}`}>
+        made by @hamnwp
+      </p>
 
       <p className={`webTagline ${isFading ? "fade-out" : ""}`}>
         tiny envelopes holding endless feelings
       </p>
 
-
-      {/* ปุ่มสติกเกอร์ กดแล้วไปหน้า Select เลย */}
       <button
         className={`sticker-btn ${isPeeling ? "peel" : ""}`}
         onClick={handleClick}
       >
         <img src={sticker} alt="Choose your paper" />
       </button>
-
-      
     </div>
   );
 }

@@ -2,7 +2,7 @@
   width: 324px;
   height: 392px;
   position: absolute;
-  top: 75%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -65,4 +65,41 @@
 
 .paper.open .paper-middle {
   transform: rotateY(0deg);
+}
+
+/* ===== STICKER ===== */
+
+.paper-sticker-overlay {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 20;
+  pointer-events: none;
+  animation: stickerFadeIn 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.paper-sticker-overlay.exit { /* ตอนกด Back */
+  animation: stickerFadeOut 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes stickerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
+@keyframes stickerFadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -100%); /* เริ่มที่ตำแหน่งปกติ (บนรอยต่อ) */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -10%);  /* จบที่ตำแหน่งต่ำลงมา (เหมือนจังหวะ 0% ของ FadeIn) */
+  }
 }

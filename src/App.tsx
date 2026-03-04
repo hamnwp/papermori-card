@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import SelectPaperPage from "./pages/SelectPaperPage";
 import Paper from "./components/Paper";
 import WriteMessagePage from "./pages/WriteMessagePage";
+import DecoratePage from "./pages/DecoratePage";
 
 export type PaperTheme = {
   id: string;
@@ -19,25 +20,41 @@ export default function App() {
     centerColor: "#f0dd7b",
   });
 
-  
   const [isPaperOpen, setIsPaperOpen] = useState(false);
+  const [selectedDeco, setSelectedDeco] = useState<string | null>("d1");
+
+  const handleGoHome = () => {
+    window.location.reload(); // คำสั่งโหลดหน้าเว็บใหม่
+  };
+
+  const [isExitingDec, setIsExitingDec] = useState(false);
+
+  const handleBackFromDec = () => {
+    setIsExitingDec(true);
+    setIsPaperOpen(true);
+
+    setTimeout(() => {
+      setStep(3);
+      setIsExitingDec(false);
+    }, 800);
+  };
 
   return (
     <div className="app-container">
-      {/* กระดาษ */}
-      <div className={`paper ${isPaperOpen ? "open" : ""}`}>
-        <div className="paper-top" style={{ background: paper.topBottomColor }} />
-        <div className="paper-middle" style={{ background: paper.centerColor }} />
-        <div className="paper-bottom" style={{ background: paper.topBottomColor }} />
-      </div>
-
+      <Paper
+        isOpen={isPaperOpen}
+        theme={paper}
+        selectedDeco={selectedDeco}
+        currentStep={step}
+        isExiting={isExitingDec}
+      />
 
       {step === 1 && (
-        <HomePage 
+        <HomePage
           goNext={() => {
-            setIsPaperOpen(true); // กางกระดาษ
+            setIsPaperOpen(true);
             setStep(2);
-          }} 
+          }}
         />
       )}
 
@@ -46,24 +63,31 @@ export default function App() {
           paper={paper}
           setPaper={setPaper}
           goNext={() => setStep(3)}
-          goHome={() => {
-            setIsPaperOpen(false); // พับกระดาษ
-            setStep(1);
-          }}
+          goHome={handleGoHome}
         />
       )}
 
-      {/* WriteMessagePage */}
       {step === 3 && (
-        <WriteMessagePage 
-          message={message} 
-          setMessage={setMessage} 
-          goNext={() => setStep(4)} 
-          goBack={() => setStep(2)} 
+        <WriteMessagePage
+          message={message}
+          setMessage={setMessage}
+          goNext={() => {
+            setIsPaperOpen(false);
+            setStep(4);
+          }}
+          goHome={handleGoHome}
+          goBack={() => setStep(2)}
         />
       )}
 
-      
+      {step === 4 && (
+        <DecoratePage
+          selectedDeco={selectedDeco}
+          setSelectedDeco={setSelectedDeco}
+          goBack={handleBackFromDec}
+          goHome={handleGoHome}
+        />
+      )}
     </div>
   );
 }

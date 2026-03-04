@@ -1,0 +1,126 @@
+.button-group-dec {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px; /* ดันลงมาที่แผ่นล่าง */
+}
+
+.nextms-btn {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline-block;
+  font-size: 25px;
+  background: transparent !important; /* พื้นหลังใส */
+  border: none !important; /* ลบเส้นขอบ */
+  box-shadow: none !important; /* ลบเงากล่อง */
+  outline: none !important;
+  padding: 0;
+
+  color: #555;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* เมาส์จ่อ */
+  transition: all 0.2s ease;
+}
+
+.backms-btn {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline-block;
+  font-size: 25px;
+  background: transparent !important; /* พื้นหลังใส */
+  border: none !important; /* ลบเส้นขอบ */
+  box-shadow: none !important; /* ลบเงากล่อง */
+  outline: none !important;
+  padding: 0;
+
+  color: #555;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.nextms-btn:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.backms-btn:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.decoratepage {
+  position: relative;
+  text-align: center;
+}
+
+.selectionPrompt {
+  font-family: "Handjet", sans-serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.decorate-ui {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-40px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 10;
+}
+
+.decorate-ui.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.deco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 12px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.deco-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    transform 0.2s,
+    border 0.2s;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+}
+
+.deco-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.deco-box:hover {
+  transform: translateY(-2px);
+}
+
+.deco-box.active {
+  border: 2px solid black;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
