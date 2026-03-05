@@ -42,19 +42,26 @@
   position: absolute;
   top: 470px;
   left: 50%;
-  transform: translateX(-50%) rotate(-8deg); /* เอียงนิดนึงให้ดูเหมือนแปะ */
+  transform: translateX(-50%) rotate(-8deg); 
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticker-btn:hover {
+  transform: translateX(-50%) rotate(-5deg) scale(1.08) translateY(-5px);
+}
+
+.sticker-btn:active {
+  transform: translateX(-50%) rotate(-8deg) scale(0.95);
 }
 
 .sticker-btn img {
   width: 240px;
-  transition:
-    transform 0.8s ease,
-    opacity 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
   transform-origin: top left;
 }
 

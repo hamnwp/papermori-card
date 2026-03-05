@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "./DecoratePage.css";
-import cat from "../assets/cat.png";
-import birthday from "../assets/birthday.png";
+import creamsoda from "../assets/creamsoda.png";
 import cake from "../assets/cake.png";
-import flower from "../assets/flower.png";
+import valentine from "../assets/valentine.png";
+import birthday from "../assets/birthday.png";
 import wine from "../assets/wine.png";
-import party from "../assets/party.png";
+import hoho from "../assets/hoho.png";
+
 
 
 type Decoration = {
@@ -23,34 +24,34 @@ type Props = {
 
 const decoItems: Decoration[] = [
   {
-    id: "d1",
-    name: "flower",
-    imageUrl: flower,
+    id: "creamsoda",
+    name: "creamsoda",
+    imageUrl: creamsoda,
   },
   {
-    id: "d2",
+    id: "cake",
     name: "cake",
     imageUrl: cake,
   },
   {
-    id: "d3",
+    id: "valentine",
+    name: "valentine",
+    imageUrl: valentine,
+  },
+  {
+    id: "birthday",
     name: "birthday",
     imageUrl: birthday,
   },
   {
-    id: "d4",
-    name: "cat",
-    imageUrl: cat,
-  },
-  {
-    id: "d5",
+    id: "wine",
     name: "wine",
     imageUrl: wine,
   },
   {
-    id: "d6",
-    name: "party",
-    imageUrl: party,
+    id: "hoho",
+    name: "hoho",
+    imageUrl: hoho,
   },
 ];
 

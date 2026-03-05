@@ -21,7 +21,7 @@ export default function App() {
   });
 
   const [isPaperOpen, setIsPaperOpen] = useState(false);
-  const [selectedDeco, setSelectedDeco] = useState<string | null>("d1");
+  const [selectedDeco, setSelectedDeco] = useState<string | null>("creamsoda");
 
   const handleGoHome = () => {
     window.location.reload(); // คำสั่งโหลดหน้าเว็บใหม่

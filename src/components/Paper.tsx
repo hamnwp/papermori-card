@@ -1,36 +1,36 @@
 import "./Paper.css";
-import cat from "../assets/cat.png";
-import birthday from "../assets/birthday.png";
+import creamsoda from "../assets/creamsoda.png";
 import cake from "../assets/cake.png";
-import flower from "../assets/flower.png";
+import valentine from "../assets/valentine.png";
+import birthday from "../assets/birthday.png";
 import wine from "../assets/wine.png";
-import party from "../assets/party.png";
+import hoho from "../assets/hoho.png";
 
 //DB Dec
 const decoItems = [
   {
-    id: "d1",
-    imageUrl: flower,
+    id: "creamsoda",
+    imageUrl: creamsoda,
   },
   {
-    id: "d2",
+    id: "cake",
     imageUrl: cake,
   },
   {
-    id: "d3",
+    id: "valentine",
+    imageUrl: valentine,
+  },
+  {
+    id: "birthday",
     imageUrl: birthday,
   },
   {
-    id: "d4",
-    imageUrl: cat,
-  },
-  {
-    id: "d5",
+    id: "wine",
     imageUrl: wine,
   },
   {
-    id: "d6",
-    imageUrl: party,
+    id: "hoho",
+    imageUrl: hoho,
   },
 ];
 

@@ -27,10 +27,6 @@ export default function HomePage({ goNext }: Props) {
         made by @hamnwp
       </p>
 
-      <p className={`webTagline ${isFading ? "fade-out" : ""}`}>
-        tiny envelopes holding endless feelings
-      </p>
-
       <button
         className={`sticker-btn ${isPeeling ? "peel" : ""}`}
         onClick={handleClick}
