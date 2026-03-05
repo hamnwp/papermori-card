@@ -42,30 +42,41 @@
   position: absolute;
   top: 470px;
   left: 50%;
-  transform: translateX(-50%) rotate(-8deg); 
+  transform: translateX(-50%) rotate(-8deg);
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 10;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: floatingSticker 3s ease-in-out infinite;
 }
 
 .sticker-btn:hover {
   transform: translateX(-50%) rotate(-5deg) scale(1.08) translateY(-5px);
 }
 
-.sticker-btn:active {
-  transform: translateX(-50%) rotate(-8deg) scale(0.95);
-}
-
 .sticker-btn img {
   width: 240px;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
   transform-origin: top left;
 }
 
 .sticker-btn.peel img {
   transform: rotate(95deg) translateY(60px);
   opacity: 0;
+}
+
+@keyframes floatingSticker {
+  0% {
+    transform: translateX(-50%) rotate(-8deg) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-5deg) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) rotate(-8deg) translateY(0px);
+  }
 }

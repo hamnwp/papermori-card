@@ -1,6 +1,6 @@
 import "../index.css";
 import "./HomePage.css";
-import sticker from "../assets/ChooseYourPaper.png";
+import sticker from "../assets/bow.png";
 import { useState } from "react";
 
 type Props = {
