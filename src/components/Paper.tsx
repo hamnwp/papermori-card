@@ -49,11 +49,11 @@ export default function Paper({
     <div className={`paper ${isOpen ? "open" : ""}`}>
       {" "}
       {/* เปลี่ยนสีพื้นหลังตาม theme ที่เลือก */}
-      <div className="paper-top" style={{ background: theme.topBottomColor }} />
-      <div className="paper-middle" style={{ background: theme.centerColor }} />
+      <div className="paper-top" style={{ background: theme.topBottomBg }} />
+      <div className="paper-middle" style={{ background: theme.centerBg }} />
       <div
         className="paper-bottom"
-        style={{ background: theme.topBottomColor }}
+        style={{ background: theme.topBottomBg }}
       />
       {/* Dec โชว์เฉพาะตอน paper ปิด + อยู่หน้า Dec หรือกำลัง Back (isExiting) */}
       {currentDeco && !isOpen && (currentStep === 4 || isExiting) && (

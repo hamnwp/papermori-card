@@ -4,20 +4,34 @@ import SelectPaperPage from "./pages/SelectPaperPage";
 import Paper from "./components/Paper";
 import WriteMessagePage from "./pages/WriteMessagePage";
 import DecoratePage from "./pages/DecoratePage";
+import top1 from "./assets/1top.png";
+import top2 from "./assets/2top.png";
+import top3 from "./assets/3top.png";
+import top4 from "./assets/4top.png";
+import top5 from "./assets/5top.png";
+import top6 from "./assets/6top.png";
+import cen1 from "./assets/1cen.png";
+import cen2 from "./assets/2cen.png";
+import cen3 from "./assets/3cen.png";
+import cen4 from "./assets/4cen.png";
+import cen5 from "./assets/5cen.png";
+import cen6 from "./assets/6cen.png";
+
+
 
 export type PaperTheme = {
   id: string;
-  topBottomColor: string;
-  centerColor: string;
+  topBottomBg: string;
+  centerBg: string;
 };
 
 export default function App() {
   const [step, setStep] = useState(1);
   const [message, setMessage] = useState("");
-  const [paper, setPaper] = useState<PaperTheme>({
+const [paper, setPaper] = useState<PaperTheme>({
     id: "1",
-    topBottomColor: "#7fb0e8",
-    centerColor: "#f0dd7b",
+    topBottomBg: `url(${top1})`, 
+    centerBg: `url(${cen1})`,
   });
 
   const [isPaperOpen, setIsPaperOpen] = useState(false);
