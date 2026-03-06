@@ -1,46 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Handjet:wght@100..900&family=Prompt:wght@300;400;500;600&display=swap");
 
 body {
-  background-image: url("./assets/bg.png");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  font-family: "Handjet", sans-serif;
-}
-body {
   margin: 0;
   min-height: 100vh;
   font-family: "Handjet", sans-serif;
 
-  /* ✅ แบ่งพื้นหลังเป็น 3 ส่วน: ชมพู | ครีม | ชมพู */
   background: linear-gradient(
-    to right, 
-    #E997B8 0%, 33.33%,    /* ส่วนที่ 1: สีชมพู (กว้าง 1 ใน 3) */
-    #F1EFE3 33.33%, 66.66%, /* ส่วนที่ 2: สีครีม (กว้าง 1 ใน 3 ตรงกลาง) */
-    #E997B8 66.66% 100%     /* ส่วนที่ 3: สีชมพู (กว้าง 1 ใน 3 ที่เหลือ) */
+    to right,
+    #e997b8 0%,
+    33.33%,
+    #f1efe3 33.33%,
+    66.66%,
+    #e997b8 66.66% 100%
   );
-  
-  /* ปรับให้รองรับการแสดงผลทุกเบราว์เซอร์ */
-  background-attachment: fixed; 
+
+  background-attachment: fixed;
 }
 
-/* สำหรับมือถือ (ถ้าอยากให้แบ่งแบบแนวตั้งแทน) */
 @media (max-width: 768px) {
   body {
-    /* เปลี่ยนจาก 'to right' เป็น 'to bottom' เพื่อให้สีเรียงจากบนลงล่างแทนจ้า */
     background: linear-gradient(
-      to bottom, 
-      #E997B8 0%, 33.33%,
-      #F1EFE3 33.33%, 66.66%,
-      #E997B8 66.66% 100%
+      to bottom,
+      #e997b8 0%,
+      33.33%,
+      #f1efe3 33.33%,
+      66.66%,
+      #e997b8 66.66% 100%
     );
   }
 }
 
 .container {
-  /* ให้ทุกหน้ามีความสูงขั้นต่ำเท่ากับความสูงหน้าจอ */
   min-height: 120vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* ป้องกันไม่ให้มีอะไรโผล่เกินออกมาจนเกิด Scrollbar ซ้อน */
+  overflow: hidden;
 }
